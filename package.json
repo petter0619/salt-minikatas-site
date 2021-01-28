@@ -1,0 +1,26 @@
+{
+  "name": "salt-minikatas-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit './{,!(node_modules)/**}/*.spec.js'",
+    "lint": "eslint **/*.js || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petter0619/salt-minikatas-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petter0619/salt-minikatas-site/issues"
+  },
+  "homepage": "https://github.com/petter0619/salt-minikatas-site#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint-config-salt": "^1.1.0",
+    "mocha": "^8.2.1"
+  }
+}
