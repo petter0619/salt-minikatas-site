@@ -1,3 +1,5 @@
+// https://www.codewars.com/kata/587e4b656c87d3e7f4000143
+
 const isPrime = int => {
     for(let i = 2; i < int; i++) {
         if(int % i === 0) return false;
@@ -5,7 +7,7 @@ const isPrime = int => {
     return int > 1;
 }
 
-const primeFactorization = int => {
+export const primeFactorization = int => {
     // Check: int not empty
     if (!int) return 'Please provide an integer';
     // Check: isInteger (not flot or other data type) - Number.isInteger(int);
@@ -26,7 +28,7 @@ const primeFactorization = int => {
             factors.push(primeNumbers[i]);
             int /= primeNumbers[i];
         } else {
-            i++;
+            i++; 
         }
     }
     return factors;
@@ -44,8 +46,8 @@ const test = {
     60: [2,2,3,5]
 }
 
-Object.keys(test).forEach(key => {
-    console.log(`Entry: ${key}. Result: [${primeFactorization(parseInt(key))}]. Expected: [${test[key]}]`);
-})
+// Object.keys(test).forEach(key => {
+//     console.log(`Entry: ${key}. Result: [${primeFactorization(parseInt(key))}]. Expected: [${test[key]}]`);
+// })
 
 // node primeFactorization/primeFactorization.js

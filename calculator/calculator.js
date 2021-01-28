@@ -1,4 +1,4 @@
-const evaluate = (string) => {
+export const evaluate = (string) => {
   if (typeof string !== 'string') return 'invalid expression';
 
   const expression = string.replace(/\s/g, '').replace(/,/g, '.');
@@ -47,4 +47,4 @@ const evaluate = (string) => {
   }
 };
 
-module.exports = evaluate;
+// module.exports.evaluate = evaluate;

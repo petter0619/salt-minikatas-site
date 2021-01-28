@@ -1,4 +1,4 @@
-const romanHardReverse = numeral => {
+export const romanToArabic = numeral => {
     // Check: That numeral isn't empty
     if (!numeral) return 'Please enter a string';
     // Check: Numeral is a string
@@ -44,4 +44,4 @@ const romanHardReverse = numeral => {
     }, 0);
 }
 
-module.exports.romanHardReverse = romanHardReverse;
+// module.exports.romanHardReverse = romanHardReverse;

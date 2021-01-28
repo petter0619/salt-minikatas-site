@@ -1,4 +1,4 @@
-const romanHard = (num) => {
+export const arabicToRoman = (num) => {
    // Check: That there is an input value!
    if (!num) return 'Please enter an integer';
    // Check: Number.isInteger(number)
@@ -53,4 +53,4 @@ const romanHard = (num) => {
    return numerals.join('');
 }
 
-module.exports.romanHard = romanHard;
+// module.exports.romanHard = romanHard;

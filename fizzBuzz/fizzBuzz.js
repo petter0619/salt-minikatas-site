@@ -1,6 +1,6 @@
-const testArray = Array.from(Array(101).keys()).slice(1); // Array with numbers 1-100
+// const testArray = Array.from(Array(101).keys()).slice(1);
 
-const fizzBuzz = number => {
+export const fizzBuzz = number => {
     if (!Number.isInteger(number)) return 'Bogus ... Please provide a number. Try again';
     if (number < 1 || number > 100) return 'Should be a number between 1 and 100';
     if (/15/.test(`${number}`) || (number % 3 === 0 && number % 5 === 0)) return 'FizzBuzz';
@@ -9,8 +9,8 @@ const fizzBuzz = number => {
     return number;
 }
 
-testArray.forEach(item => {
-    console.log(fizzBuzz(item));
-});
+// testArray.forEach(item => {
+//     console.log(fizzBuzz(item));
+// });
 
-module.exports.fizzBuzz = fizzBuzz;
+// module.exports.fizzBuzz = fizzBuzz;
