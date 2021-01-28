@@ -146,7 +146,7 @@ const romanNumeralForm = document.querySelector('#romanNumeralForm');
           </div>
           <button type="submit" class="btn btn-success">Calculate</button>
         </form>
-        <span id="result_calculator"></span>
+        <div id="result_calculator"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -171,10 +171,10 @@ const romanNumeralForm = document.querySelector('#romanNumeralForm');
           </div>
           <button type="submit" class="btn btn-success">FizzBuzz!</button>
         </form>
-        <span id="result_fizzbuzz"></span>
+        <div id="result_fizzbuzz"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark">See all results from 1 to 100</button>
+        <button type="button" class="btn btn-dark" id="fizzBuzzShowAll">See all results from 1 to 100</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
@@ -198,7 +198,7 @@ const romanNumeralForm = document.querySelector('#romanNumeralForm');
           </div>
           <button type="submit" class="btn btn-success">Factorize!</button>
         </form>
-        <span id="result_primeFactor"></span>
+        <div id="result_primeFactor"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -218,17 +218,19 @@ const romanNumeralForm = document.querySelector('#romanNumeralForm');
         
         <form id="romanNumeralForm">
           <div class="mb-3">
-            <label for="romanNumeral" class="form-label">Roman numeral:</label>
-            <input name="romanNumeral" type="text" class="form-control" id="romanNumeral_roman" aria-describedby="emailHelp" placeholder="E.g. MXMXCII">
-          </div>
-          <div class="mb-3">
-            <label for="arabicNumber" class="form-label">Arabic number:</label>
-            <input name="arabicNumber" type="text" class="form-control" id="romanNumeral_arabic" aria-describedby="emailHelp" placeholder="E.g. 1992">
+            <label for="input" class="form-label">Enter a roman numeral or an integer to convert:</label>
+            <input name="input" type="text" class="form-control" id="expression" aria-describedby="emailHelp" placeholder="E.g. MXMXCII or 1992">
+            <label for="conversionType" class="form-label">Convert...</label>
+            <select name="conversionType" class="form-select" aria-label="Default select example">
+              <option value="convertToRoman">Number to Roman Numeral</option>
+              <option value="convertToArabic">Roman Numeral to Number</option>
+            </select>
           </div>
           <button type="submit" class="btn btn-success">Convert</button>
         </form>
-        
+        <div id="result_romanNumeral"></div>    
       </div>
+    
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>

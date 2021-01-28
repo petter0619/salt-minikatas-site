@@ -10,6 +10,7 @@ const calculatorForm = document.querySelector('#calculatorForm');
 const fizzbuzzForm = document.querySelector('#fizzbuzzForm');
 const primeFactorForm = document.querySelector('#primeFactorForm');
 const romanNumeralForm = document.querySelector('#romanNumeralForm');
+const fizzBuzzShowAll = document.querySelector('#fizzBuzzShowAll');
 
 /* ------------- Handlers ------------- */
 function calcFormHandler(e) {
@@ -17,7 +18,7 @@ function calcFormHandler(e) {
     console.log('Calculator');
     console.log( evaluate(this.expression.value) );
 
-    document.querySelector('#result_calculator').textContent = `${evaluate(this.expression.value)}`;
+    document.querySelector('#result_calculator').innerHTML = `<br><span>${evaluate(this.expression.value)}</span>`;
 }
 
 function fizzbuzzFormHandler(e) {
@@ -26,7 +27,7 @@ function fizzbuzzFormHandler(e) {
     console.log( fizzBuzz( parseInt(this.number.value) ) );
 
     // #result_fizzbuzz
-    document.querySelector('#result_fizzbuzz').textContent = `${fizzBuzz( parseInt(this.number.value) )}`;
+    document.querySelector('#result_fizzbuzz').innerHTML = `<br><span>${fizzBuzz( parseInt(this.number.value) )}</span>`;
 }
 
 function primeFactorFormHandler(e) {
@@ -36,19 +37,35 @@ function primeFactorFormHandler(e) {
     console.log( primeFactorization( parseInt(this.number.value) ) );
 
     // #result_primeFactor
-    document.querySelector('#result_primeFactor').textContent = `${primeFactorization(parseInt(this.number.value) )}`;
+    document.querySelector('#result_primeFactor').innerHTML = `<br><span>[${primeFactorization(parseInt(this.number.value) )}]</span>`;
 }
 
 function romanNumeralFormHandler(e) {
     e.preventDefault();
-    console.log('Roman numeral', this.romanNumeral.value, this.arabicNumber.value);
+    
+    console.log(this.input.value);
+    console.log(this.conversionType.value);
+    // #result_romanNumeral
 
-    console.log('arabicToRoman', this.arabicNumber.value, arabicToRoman( parseInt(this.arabicNumber.value) ));
-    console.log('romanToArabic', this.romanNumeral.value, romanToArabic( this.romanNumeral.value.toUpperCase() ));
+    let result; 
+    if (this.conversionType.value === 'convertToRoman') {
+        result = arabicToRoman(parseInt(this.input.value));
+    } else {
+        result = romanToArabic(this.input.value.toUpperCase());
+    } 
+
+    document.querySelector('#result_romanNumeral').innerHTML = `<br><span>${result}</span>`;
 }
+
+const fizzBuzzClickHandler = () => {
+    document.querySelector('#result_fizzbuzz').innerHTML = `<br><span>testing</span>`;  
+}
+
 
 /* ------------- Event Listeners ------------- */
 calculatorForm.addEventListener('submit', calcFormHandler);
 fizzbuzzForm.addEventListener('submit', fizzbuzzFormHandler);
 primeFactorForm.addEventListener('submit', primeFactorFormHandler);
 romanNumeralForm.addEventListener('submit', romanNumeralFormHandler);
+fizzBuzzShowAll.addEventListener('click', fizzBuzzClickHandler);
+
