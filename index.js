@@ -17,7 +17,6 @@ function calcFormHandler(e) {
     console.log('Calculator');
     console.log( evaluate(this.expression.value) );
 
-    // #result_calculator
     document.querySelector('#result_calculator').textContent = `${evaluate(this.expression.value)}`;
 }
 
@@ -27,6 +26,7 @@ function fizzbuzzFormHandler(e) {
     console.log( fizzBuzz( parseInt(this.number.value) ) );
 
     // #result_fizzbuzz
+    document.querySelector('#result_fizzbuzz').textContent = `${fizzBuzz( parseInt(this.number.value) )}`;
 }
 
 function primeFactorFormHandler(e) {
@@ -36,6 +36,7 @@ function primeFactorFormHandler(e) {
     console.log( primeFactorization( parseInt(this.number.value) ) );
 
     // #result_primeFactor
+    document.querySelector('#result_primeFactor').textContent = `${primeFactorization(parseInt(this.number.value) )}`;
 }
 
 function romanNumeralFormHandler(e) {
