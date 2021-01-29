@@ -2,8 +2,7 @@
 import { evaluate } from './calculator.js';
 import { fizzBuzz } from './fizzBuzz.js';
 import { primeFactorization } from './primeFactorization.js';
-import { arabicToRoman } from './romanNumerals_Hard.js';
-import { romanToArabic } from './reverseRoman_hard.js';
+import { arabicToRoman, romanToArabic } from './numeralConverter.js';
 
 /* ------------- Selectors ------------- */
 const calculatorForm = document.querySelector('#calculatorForm');
