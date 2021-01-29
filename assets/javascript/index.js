@@ -18,16 +18,19 @@ const clearResults_btn = document.querySelectorAll('.clearResults-btn');
 function calcFormHandler(e) {
     e.preventDefault();
     document.querySelector('#result_calculator').innerHTML = `<br><span>${evaluate(this.expression.value)}</span>`;
+    // this.reset();
 }
 
 function fizzbuzzFormHandler(e) {
     e.preventDefault();
     document.querySelector('#result_fizzbuzz').innerHTML = `<br><span>${fizzBuzz( parseInt(this.number.value) )}</span>`;
+    // this.reset();
 }
 
 function primeFactorFormHandler(e) {
     e.preventDefault();
     document.querySelector('#result_primeFactor').innerHTML = `<br><span>[${primeFactorization(parseInt(this.number.value) )}]</span>`;
+    // this.reset();
 }
 
 function romanNumeralFormHandler(e) {
@@ -41,6 +44,7 @@ function romanNumeralFormHandler(e) {
     } 
 
     document.querySelector('#result_romanNumeral').innerHTML = `<br><span>${result}</span>`;
+    // this.reset();
 }
 
 const fizzBuzzClickHandler = () => {
@@ -67,10 +71,12 @@ fizzBuzzShowAll.addEventListener('click', fizzBuzzClickHandler);
 clearResults_x.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.target.parentElement.nextElementSibling.querySelector('.presentResults').innerHTML = '';
+        e.target.parentElement.nextElementSibling.querySelector('form').reset();
     })
 });
 clearResults_btn.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.target.parentElement.previousElementSibling.querySelector('.presentResults').innerHTML = '';
+        e.target.parentElement.previousElementSibling.querySelector('form').reset();
     })
 });
