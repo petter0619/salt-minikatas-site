@@ -46,5 +46,3 @@ export const evaluate = (string) => {
       break;
   }
 };
-
-// module.exports.evaluate = evaluate;

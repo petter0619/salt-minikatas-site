@@ -1,5 +1,3 @@
-// https://www.codewars.com/kata/587e4b656c87d3e7f4000143
-
 const isPrime = int => {
     for(let i = 2; i < int; i++) {
         if(int % i === 0) return false;
@@ -45,9 +43,3 @@ const test = {
     10: [2,5],
     60: [2,2,3,5]
 }
-
-// Object.keys(test).forEach(key => {
-//     console.log(`Entry: ${key}. Result: [${primeFactorization(parseInt(key))}]. Expected: [${test[key]}]`);
-// })
-
-// node primeFactorization/primeFactorization.js
