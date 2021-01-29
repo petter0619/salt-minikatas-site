@@ -11,6 +11,8 @@ const fizzbuzzForm = document.querySelector('#fizzbuzzForm');
 const primeFactorForm = document.querySelector('#primeFactorForm');
 const romanNumeralForm = document.querySelector('#romanNumeralForm');
 const fizzBuzzShowAll = document.querySelector('#fizzBuzzShowAll');
+const clearResults_x = document.querySelectorAll('.clearResults-x');
+const clearResults_btn = document.querySelectorAll('.clearResults-btn');
 
 /* ------------- Handlers ------------- */
 function calcFormHandler(e) {
@@ -62,3 +64,13 @@ fizzbuzzForm.addEventListener('submit', fizzbuzzFormHandler);
 primeFactorForm.addEventListener('submit', primeFactorFormHandler);
 romanNumeralForm.addEventListener('submit', romanNumeralFormHandler);
 fizzBuzzShowAll.addEventListener('click', fizzBuzzClickHandler);
+clearResults_x.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.target.parentElement.nextElementSibling.querySelector('.presentResults').innerHTML = '';
+    })
+});
+clearResults_btn.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.target.parentElement.previousElementSibling.querySelector('.presentResults').innerHTML = '';
+    })
+});
